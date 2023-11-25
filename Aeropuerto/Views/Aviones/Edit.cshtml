@@ -23,10 +23,15 @@
                 <input asp-for="Capacidad" class="form-control" />
                 <span asp-validation-for="Capacidad" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label asp-for="AerolineaId" class="control-label"></label>
                 <select asp-for="AerolineaId" class="form-control" asp-items="ViewBag.AerolineaId"></select>
                 <span asp-validation-for="AerolineaId" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Aerolinea" class="control-label"></label>
+                <select asp-for="AerolineaId" class="form-control" id="aerolineaDropdown"></select>
+                <input type="hidden" asp-for="AerolineaId" id="hiddenAerolineaId" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -40,5 +45,24 @@
 </div>
 
 @section Scripts {
+    <script>
+        // Obtener la lista de aerolíneas del servidor y cargarlas en el dropdown
+        $.ajax({
+            url: '/Aerolineas/GetAerolineas', // Ajusta la ruta según tu controlador y acción real
+            type: 'GET',
+            success: function (data) {
+                var dropdown = $('#aerolineaDropdown');
+                dropdown.empty();
+                $.each(data, function () {
+                    dropdown.append($('<option></option>').attr('value', this.aerolineaId).text(this.nombre));
+                });
+            }
+        });
+
+        // Manejar el cambio en el dropdown para actualizar el campo oculto
+        $('#aerolineaDropdown').change(function () {
+            $('#hiddenAerolineaId').val($(this).val());
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

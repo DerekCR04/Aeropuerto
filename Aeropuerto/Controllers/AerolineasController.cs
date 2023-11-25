@@ -44,6 +44,12 @@ namespace Aeropuerto.Controllers
             return View(aerolinea);
         }
 
+        public JsonResult GetAerolineas()
+        {
+            var aerolineas = _context.Aerolineas.Select(a => new { a.AerolineaId, a.Nombre }).ToList();
+            return Json(aerolineas);
+        }
+
         // GET: Aerolineas/Create
         public IActionResult Create()
         {
