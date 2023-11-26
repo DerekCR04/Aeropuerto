@@ -12,17 +12,34 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+           @*  <div class="form-group">
                 <label asp-for="AvionId" class="control-label"></label>
                 <select asp-for="AvionId" class ="form-control" asp-items="ViewBag.AvionId"></select>
-            </div>
+            </div> *@
+
             <div class="form-group">
+                <label asp-for="AvionId" class="control-label"></label>
+                <select asp-for="AvionId" class="form-control" id="avionDropdown"></select>
+                <input type="hidden" asp-for="AvionId" id="hiddenAvionId" />
+            </div>
+
+            @* <div class="form-group">
                 <label asp-for="AerolineaId" class="control-label"></label>
                 <select asp-for="AerolineaId" class ="form-control" asp-items="ViewBag.AerolineaId"></select>
-            </div>
+            </div> *@
             <div class="form-group">
+                <label asp-for="Aerolinea" class="control-label"></label>
+                <select asp-for="AerolineaId" class="form-control" id="aerolineaDropdown"></select>
+                <input type="hidden" asp-for="AerolineaId" id="hiddenAerolineaId" />
+            </div>
+            @* <div class="form-group">
                 <label asp-for="DestinoId" class="control-label"></label>
                 <select asp-for="DestinoId" class ="form-control" asp-items="ViewBag.DestinoId"></select>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="DestinoId" class="control-label"></label>
+                <select asp-for="DestinoId" class="form-control" id="destinoDropdown"></select>
+                <input type="hidden" asp-for="DestinoId" id="hiddenDestinoId" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -36,5 +53,65 @@
 </div>
 
 @section Scripts {
+    <script>
+        // Obtener la lista de aerolíneas del servidor y cargarlas en el dropdown
+        $.ajax({
+            url: '/Aerolineas/GetAerolineas', // Ajusta la ruta según tu controlador y acción real
+            type: 'GET',
+            success: function (data) {
+                var dropdown = $('#aerolineaDropdown');
+                dropdown.empty();
+                $.each(data, function () {
+                    dropdown.append($('<option></option>').attr('value', this.aerolineaId).text(this.nombre));
+                });
+            }
+        });
+
+        // Manejar el cambio en el dropdown para actualizar el campo oculto
+        $('#aerolineaDropdown').change(function () {
+            $('#hiddenAerolineaId').val($(this).val());
+        });
+    </script>
+
+    <script>
+        // Obtener la lista de aviones del servidor y cargarlos en el dropdown
+        $.ajax({
+            url: '/Aviones/GetAviones', // Ajusta la ruta según tu controlador y acción real
+            type: 'GET',
+            success: function (data) {
+                var dropdown = $('#avionDropdown');
+                dropdown.empty();
+                $.each(data, function () {
+                    dropdown.append($('<option></option>').attr('value', this.avionId).text(this.modelo));
+                });
+            }
+        });
+
+        // Manejar el cambio en el dropdown para actualizar el campo oculto
+        $('#avionDropdown').change(function () {
+            $('#hiddenAvionId').val($(this).val());
+        });
+    </script>
+
+    <script>
+        // Obtener la lista de destinos del servidor y cargarlos en el dropdown
+        $.ajax({
+            url: '/Destinoes/GetDestinos', // Ajusta la ruta según tu controlador y acción real
+            type: 'GET',
+            success: function (data) {
+                var dropdown = $('#destinoDropdown');
+                dropdown.empty();
+                $.each(data, function () {
+                    dropdown.append($('<option></option>').attr('value', this.destinoId).text(this.pais));
+                });
+            }
+        });
+
+        // Manejar el cambio en el dropdown para actualizar el campo oculto
+        $('#destinoDropdown').change(function () {
+            $('#hiddenDestinoId').val($(this).val());
+        });
+    </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

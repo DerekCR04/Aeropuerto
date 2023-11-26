@@ -44,6 +44,12 @@ namespace Aeropuerto.Controllers
             return View(avione);
         }
 
+        public JsonResult GetAviones()
+        {
+            var aviones = _context.Aviones.Select(a => new { a.AvionId, a.Modelo }).ToList();
+            return Json(aviones);
+        }
+
         // GET: Aviones/Create
         public IActionResult Create()
         {

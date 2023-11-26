@@ -44,6 +44,12 @@ namespace Aeropuerto.Controllers
             return View(destino);
         }
 
+        public JsonResult GetDestinos()
+        {
+            var destinos = _context.Destinos.Select(d => new { d.DestinoId, d.Pais }).ToList();
+            return Json(destinos);
+        }
+
         // GET: Destinoes/Create
         public IActionResult Create()
         {
