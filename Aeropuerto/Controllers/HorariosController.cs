@@ -56,7 +56,7 @@ namespace Aeropuerto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HorarioId,HoraSalida,HoraLlegada,VueloId")] Horario horario)
+        public async Task<IActionResult> Create([Bind("HorarioId,HoraSalida,HoraLlegada,VueloId,Fecha")] Horario horario)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Aeropuerto.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HorarioId,HoraSalida,HoraLlegada,VueloId")] Horario horario)
+        public async Task<IActionResult> Edit(int id, [Bind("HorarioId,HoraSalida,HoraLlegada,VueloId,Fecha")] Horario horario)
         {
             if (id != horario.HorarioId)
             {

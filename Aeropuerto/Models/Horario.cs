@@ -11,6 +11,8 @@ public partial class Horario
 
     public TimeSpan? HoraLlegada { get; set; }
 
+    public DateTime? Fecha { get; set; }
+
     public int? VueloId { get; set; }
 
     public virtual Vuelo? Vuelo { get; set; }

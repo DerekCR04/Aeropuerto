@@ -1,0 +1,71 @@
+﻿@using Aeropuerto.ViewModel
+@model List<InfoVueloViewModel>
+
+@{
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.Label("vuelo numero")
+            </th>
+            <th>
+                @Html.Label("Aerolinea")
+            </th>
+            <th>
+                @Html.Label("Pais de destino")
+            </th>
+            <th>
+                @Html.Label("Modelo del avion")
+            </th>
+            <th>
+                @Html.Label("Hora de salida")
+            </th>
+            <th>
+                @Html.Label("Hora de llegada")
+            </th>
+            <th>
+                @Html.Label("Fecha de salida")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VueloId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAerolinea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pais)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModeloAvion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraLlegada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraSalida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                @* <td>
+                    <a asp-action="Edit" asp-route-id="@item.VueloId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.VueloId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.VueloId">Delete</a>
+                </td> *@
+            </tr>
+        }
+    </tbody>
+</table>
+
