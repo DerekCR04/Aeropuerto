@@ -1,69 +1,39 @@
 ﻿@using Aeropuerto.ViewModel
 @model List<InfoVueloViewModel>
 
-@{
-}
+<h1>InfoVuelos</h1>
 
-<h1>Index</h1>
-
-
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.Label("vuelo numero")
-            </th>
-            <th>
-                @Html.Label("Aerolinea")
-            </th>
-            <th>
-                @Html.Label("Pais de destino")
-            </th>
-            <th>
-                @Html.Label("Modelo del avion")
-            </th>
-            <th>
-                @Html.Label("Hora de salida")
-            </th>
-            <th>
-                @Html.Label("Hora de llegada")
-            </th>
-            <th>
-                @Html.Label("Fecha de salida")
-            </th>
-            <th></th>
+            <th>@Html.Label("Vuelo Número")</th>
+            <th>@Html.Label("Aerolínea")</th>
+            <th>@Html.Label("País de Destino")</th>
+            <th>@Html.Label("Modelo del Avión")</th>
+            <th>@Html.Label("Hora de Salida")</th>
+            <th>@Html.Label("Hora de Llegada")</th>
+            <th>@Html.Label("Fecha de Salida")</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.VueloId)</td>
+                <td>@Html.DisplayFor(modelItem => item.NombreAerolinea)</td>
+                <td>@Html.DisplayFor(modelItem => item.Pais)</td>
+                <td>@Html.DisplayFor(modelItem => item.ModeloAvion)</td>
+                <td>@Html.DisplayFor(modelItem => item.HoraLlegada)</td>
+                <td>@Html.DisplayFor(modelItem => item.HoraSalida)</td>
+                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.VueloId)
+                    @* Acciones para editar, detalles y eliminar
+                <a asp-action="Edit" asp-route-id="@item.VueloId" class="btn btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.VueloId" class="btn btn-info">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.VueloId" class="btn btn-danger">Delete</a>
+                *@
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NombreAerolinea)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Pais)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ModeloAvion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HoraLlegada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HoraSalida)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Fecha)
-                </td>
-                @* <td>
-                    <a asp-action="Edit" asp-route-id="@item.VueloId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.VueloId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.VueloId">Delete</a>
-                </td> *@
             </tr>
         }
     </tbody>

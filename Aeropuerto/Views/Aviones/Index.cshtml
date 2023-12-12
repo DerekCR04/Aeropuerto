@@ -1,47 +1,38 @@
 ﻿@model IEnumerable<Aeropuerto.Models.Avione>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Aviones";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
+
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Capacidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Aerolinea)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.Modelo)</th>
+            <th>@Html.DisplayNameFor(model => model.Capacidad)</th>
+            <th>@Html.DisplayNameFor(model => model.Aerolinea)</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Aerolinea.Nombre)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AvionId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AvionId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AvionId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Modelo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Capacidad)</td>
+                <td>@Html.DisplayFor(modelItem => item.Aerolinea.Nombre)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AvionId" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.AvionId" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.AvionId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+

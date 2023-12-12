@@ -7,6 +7,42 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Aeropuerto.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #DCE8F2;
+            color: #1B4159;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #1B4159;
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            background-color: #1B4159;
+        }
+
+        .navbar-light .navbar-toggler {
+            border-color: #1B4159;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            text-align: center;
+        }
+
+            .navbar-nav .nav-item {
+                width: auto;
+                display: inline-block;
+                margin: 0 5px; /* Ajusta el espacio entre los elementos del menú */
+            }
+
+        .footer {
+            background-color: #1B4159;
+            color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,8 +53,8 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>

@@ -1,48 +1,35 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿/* Hover para el enlace a.navbar-brand */
+a.navbar-brand:hover {
+    color: #ff9900; /* Cambia el color cuando se hace hover */
 }
 
-a {
-  color: #0077cc;
+/* Hover para todos los enlaces */
+a:hover {
+    text-decoration: underline; /* Añade subrayado al hacer hover */
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Hover para el botón .btn-primary */
+.btn-primary:hover {
+    background-color: #15568e; /* Cambia el color de fondo cuando se hace hover */
+    border-color: #124574; /* Cambia el color del borde cuando se hace hover */
+    color: #fff; /* Cambia el color del texto cuando se hace hover */
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Hover para los elementos .nav-pills */
+.nav-pills .nav-link:hover,
+.nav-pills .show > .nav-link:hover {
+    background-color: #15568e; /* Cambia el color de fondo cuando se hace hover */
+    border-color: #124574; /* Cambia el color del borde cuando se hace hover */
+    color: #fff; /* Cambia el color del texto cuando se hace hover */
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+/* Hover para cualquier elemento con la clase .box-shadow */
+.box-shadow:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1); /* Cambia la sombra cuando se hace hover */
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+/* Hover para el botón .accept-policy */
+button.accept-policy:hover {
+    color: #1b6ec2; /* Cambia el color cuando se hace hover */
+    text-decoration: underline; /* Añade subrayado al hacer hover */
 }

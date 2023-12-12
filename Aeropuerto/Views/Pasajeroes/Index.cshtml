@@ -1,53 +1,39 @@
 ﻿@model IEnumerable<Aeropuerto.Models.Pasajero>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pasajeros";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
+
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellidos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Edad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destino)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Apellidos)</th>
+            <th>@Html.DisplayNameFor(model => model.Edad)</th>
+            <th>@Html.DisplayNameFor(model => model.Destino.Pais)</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellidos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Edad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Destino.Pais)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PasajeroId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PasajeroId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PasajeroId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Apellidos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Edad)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Destino.Pais)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PasajeroId" class="btn btn-warning">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.PasajeroId" class="btn btn-info">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.PasajeroId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+        }
     </tbody>
 </table>
