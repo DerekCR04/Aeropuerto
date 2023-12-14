@@ -7,81 +7,77 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="menu">
-            <section class="menu__container">
+    <body>
+        <header>
+            <nav class="menu">
+                <section class="menu__container">
 
 
-                <ul class="menu__links">
-                    <li class="menu__item">
-                        <a asp-area="" asp-controller="Home" asp-action="Index" class="menu__link">Aeropuerto</a>
-                    </li>
+                    <ul class="menu__links">
+                        <li class="menu__item">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="menu__link">Aeropuerto</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Home" asp-action="Privacy" class="menu__link">Privacy</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Aerolineas" asp-action="Index" class="menu__link">Aerolineas</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Aerolineas" asp-action="Index" class="menu__link">Aerolineas</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Aviones" asp-action="Index" class="menu__link">Aviones</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Aviones" asp-action="Index" class="menu__link">Aviones</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Destinoes" asp-action="Index" class="menu__link">Destinos</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Destinoes" asp-action="Index" class="menu__link">Destinos</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Empleadoes" asp-action="Index" class="menu__link">Empleados</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Empleadoes" asp-action="Index" class="menu__link">Empleados</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Horarios" asp-action="Index" class="menu__link">Horarios</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Horarios" asp-action="Index" class="menu__link">Horarios</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Pasajeroes" asp-action="Index" class="menu__link">Pasajeros</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Pasajeroes" asp-action="Index" class="menu__link">Pasajeros</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Pilotoes" asp-action="Index" class="menu__link">Pilotos</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Pilotoes" asp-action="Index" class="menu__link">Pilotos</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="Vueloes" asp-action="Index" class="menu__link">Vuelos</a>
+                        </li>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="Vueloes" asp-action="Index" class="menu__link">Vuelos</a>
-                    </li>
+                        <li class="menu__item menu__item--show">
+                            <a asp-area="" asp-controller="InfoVuelos" asp-action="Index" class="menu__link">InfoVuelos</a>
+                        </li>
+                    </ul>
 
-                    <li class="menu__item menu__item--show">
-                        <a asp-area="" asp-controller="InfoVuelos" asp-action="Index" class="menu__link">InfoVuelos</a>
-                    </li>
-                </ul>
+                    <div class="menu__hamburguer">
+                        <img src="assets/menu.svg" class="menu__img">
+                    </div>
+                </section>
+            </nav>
 
-                <div class="menu__hamburguer">
-                    <img src="assets/menu.svg" class="menu__img">
-                </div>
-            </section>
-        </nav>
+        </header>
 
-    </header>
-
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container"><p class="m-0 small">© Aeropuerto Internacional 2023. Todos los derechos reservados.</p></div>
         <div class="container">
-            &copy; 2023 - Aeropuerto - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+        <footer class="border-top footer text-muted">
+            <div class="container"><p class="m-0 small">© Aeropuerto Internacional 2023. Todos los derechos reservados.</p></div>
+            <div class="container">
+                &copy; 2023 - Aeropuerto - Grupo #1
+
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

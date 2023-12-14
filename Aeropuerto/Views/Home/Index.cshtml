@@ -2,10 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenidos</h1>
-    <p>Viaja por el mundo cumple tus sueños.</p>
-</div>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,92 +9,91 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aeropuerto Internacional</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
 
-    <section class="image">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Interior_de_la_terminal_T4_del_Aeropuerto_Adolfo_Su%C3%A1rez_Madrid-Barajas..jpg" alt="Imagen 1">
-        <img src="https://images.pexels.com/photos/12717154/pexels-photo-12717154.jpeg" alt="Imagen 2">
-        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA3L3BmLW11Ny1qaXI1Nzg3LWppcmEtcG9yLTAwMTItbC5qcGc.jpg" alt="Imagen 3">
-        <img src="https://images.rawpixel.com/image_600/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbnMxOTk3MS1pbWFnZS1rd3Z5YTcxby5qcGc.jpg" alt="Imagen 4">
-        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZsNDk3ODA5MzAyMjEtaW1hZ2Uta3U3ejh2dHQuanBn.jpg" alt="Imagen 5">
-    </section>
+    <body>
 
-    <section class="texto">
-        <div >
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="https://southjets.com/wp-content/uploads/2023/05/Aeropuerto_de_Munich_Alemania-edit-1024x576.jpg" alt="Aeropuerto">
-                <div >
-                    <div >
-                        <div >
-                            <h2 >
-                                <span class="section-heading-lower">Bienvenido al Aeropuerto Internacional</span>
-                            </h2>
+        <div class="container-fluid">
 
-                            <p >
-                                Explora la emoción y la comodidad de viajar desde y hacia nuestro aeropuerto internacional. Ya sea que estés partiendo a destinos emocionantes o regresando a casa, en el Aeropuerto Internacional, estamos dedicados a proporcionar una experiencia de viaje excepcional. Desde instalaciones modernas hasta servicios de clase mundial, nuestro aeropuerto es tu puerta de entrada al mundo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </section>
-
-    <section class="texto" >
-        <div >
             <div >
-                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="https://img.freepik.com/fotos-premium/avion-despegando-aeropuerto_148840-4714.jpg" alt="Avión despegando">
+                <h1> Aeropuerto Grupo #1 </h1>
+                <h2> Miembros del grupo: </h2>
+             
             </div>
-            <div>
-                <div>
-                    <div>
-                        <div>
-                            <h2>
-                                <span class="section-heading-upper">Viajes sin complicaciones</span>
-                                <span class="section-heading-lower">Acerca de nuestro Aeropuerto</span>
-                            </h2>
-                            <p>
-                                Fundado para conectar el mundo, el Aeropuerto Internacional ha estado facilitando viajes aéreos seguros y cómodos desde 2023. Nos enorgullece ofrecer una experiencia de viaje que refleja la calidad, la eficiencia y la calidez. Ya sea que estés volando por negocios o placer, nuestro aeropuerto está diseñado para satisfacer todas tus necesidades de viaje.
-                            </p>
+
+      
+            <div id="theCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#theCarousel" data-slide-to="1"></li>
+                    <li data-target="#theCarousel" data-slide-to="3"></li>
+                    <li data-target="#theCarousel" data-slide-to="4"></li>
+
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                    <img src="/img/nta_p.gif" alt="Ilustracion">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h3>Josday Kaleth Méndez Rodríguez</h3>
+                            <p>Grupo #1</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class ="texto">
-        <div>
-            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Terminal_4_del_aeropuerto_de_Madrid-Barajas%2C_Espa%C3%B1a%2C_2013-01-09%2C_DD_11.jpg" alt="Terminal del Aeropuerto">
-            <div>
-                <div>
-                    <div>
-                        <div>
-                            <h2>
-                                <span class="section-heading-upper">Construyendo conexiones globales</span>
-                                <span class="section-heading-lower">Nuestra Misión y Visión</span>
-                            </h2>
-                            <span class="section-heading-upper"><strong>Misión</strong></span>
-                            <p class="mb-0">
-                                Facilitar la conectividad global al proporcionar servicios aeroportuarios de alta calidad, asegurando la comodidad y la seguridad de nuestros pasajeros y la eficiencia de las operaciones aéreas.
-                            </p>
 
-                            <br>
 
-                            <span class="section-heading-upper"><strong>Visión</strong></span>
-                            <p class="mb-0">
-                                Ser reconocidos como uno de los principales aeropuertos internacionales, destacando por nuestra excelencia en servicios y contribución al desarrollo del transporte aéreo a nivel mundial.
-                            </p>
+                    <div class="item">
+                        <img src="/img/_retrasa_ait_emergencia_sanitaria_p.gif" alt="fotografia" >
+                        <div class="carousel-caption d-none d-md-block">
+                        <h3> Dereck Castillo</h3>
+                        <p>Grupo #1</p>
                         </div>
                     </div>
+
+                  
+                    <div class="item">
+                        <img src="/img/nta_p.gif" alt="diseno" >
+                        <div class="carousel-caption d-none d-md-block">
+                        <h3> Dariel Vargas Lanza</h3>
+                        <p>Grupo #1</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="/img/_retrasa_ait_emergencia_sanitaria_p.gif" alt="diseno">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h3>Jefferson Burgaly Chaves</h3>
+                            <p>Grupo #1</p>
+                        </div>
+                    </div>
+
+
+                    <div class="item">
+                        <img src="/img/nta_p.gif" alt="diseno">
+                        <div class="carousel-caption d-none d-md-block">
+                        <h3>Enrique González Laporte</h3>
+                            <p>Grupo #1</p>
+                        </div>
+                    </div>
+
+                    <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">anterior</span>
+                    </a>
+                    <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">siguiente</span>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
+          
 
   
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+    </body>
 </html>
