@@ -6,93 +6,67 @@
     <title>@ViewData["Title"] - Aeropuerto</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Aeropuerto.styles.css" asp-append-version="true" />
-    <style>
-        body {
-            background-color: #DCE8F2;
-            color: #1B4159;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .navbar-brand,
-        .nav-link {
-            color: #1B4159;
-        }
-
-        .navbar-light .navbar-toggler-icon {
-            background-color: #1B4159;
-        }
-
-        .navbar-light .navbar-toggler {
-            border-color: #1B4159;
-        }
-
-        .navbar-nav {
-            width: 100%;
-            text-align: center;
-        }
-
-            .navbar-nav .nav-item {
-                width: auto;
-                display: inline-block;
-                margin: 0 5px; /* Ajusta el espacio entre los elementos del menú */
-            }
-
-        .footer {
-            background-color: #1B4159;
-            color: #FFFFFF;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Aeropuerto</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Aerolineas" asp-action="Index">Aerolineas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Aviones" asp-action="Index">Aviones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Destinoes" asp-action="Index">Destinos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Empleadoes" asp-action="Index">Empleados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Horarios" asp-action="Index">Horarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pasajeroes" asp-action="Index">Pasajeros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pilotoes" asp-action="Index">Pilotos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Vueloes" asp-action="Index">Vuelos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="InfoVuelos" asp-action="Index">InfoVuelos</a>
-                        </li>
-                    </ul>
+        <nav class="menu">
+            <section class="menu__container">
+
+
+                <ul class="menu__links">
+                    <li class="menu__item">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="menu__link">Aeropuerto</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Home" asp-action="Privacy" class="menu__link">Privacy</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Aerolineas" asp-action="Index" class="menu__link">Aerolineas</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Aviones" asp-action="Index" class="menu__link">Aviones</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Destinoes" asp-action="Index" class="menu__link">Destinos</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Empleadoes" asp-action="Index" class="menu__link">Empleados</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Horarios" asp-action="Index" class="menu__link">Horarios</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Pasajeroes" asp-action="Index" class="menu__link">Pasajeros</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Pilotoes" asp-action="Index" class="menu__link">Pilotos</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="Vueloes" asp-action="Index" class="menu__link">Vuelos</a>
+                    </li>
+
+                    <li class="menu__item menu__item--show">
+                        <a asp-area="" asp-controller="InfoVuelos" asp-action="Index" class="menu__link">InfoVuelos</a>
+                    </li>
+                </ul>
+
+                <div class="menu__hamburguer">
+                    <img src="assets/menu.svg" class="menu__img">
                 </div>
-            </div>
+            </section>
         </nav>
+
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -100,13 +74,14 @@
     </div>
 
     <footer class="border-top footer text-muted">
+        <div class="container"><p class="m-0 small">© Aeropuerto Internacional 2023. Todos los derechos reservados.</p></div>
         <div class="container">
             &copy; 2023 - Aeropuerto - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
